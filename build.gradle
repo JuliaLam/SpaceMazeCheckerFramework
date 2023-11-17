@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'org.checkerframework' version '0.6.33'
+}
+
+apply plugin: 'org.checkerframework'
+
+checkerFramework {
+    checkers = ['org.checkerframework.checker.nullness.NullnessChecker']
+    extraJavacArgs = ['-Astubs=/mnt/c/Users/julia/IdeaProjects/SpaceMazeCheck/stubs']
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'main.MainFrame'
+
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

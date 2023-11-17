@@ -1,0 +1,11 @@
+package java.awt;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
+
+class Graphics{
+    public boolean drawImage(@Nullable Image img, int x, int y, int width, int height, @Nullable ImageObserver observer);
+
+
+}
+
+
