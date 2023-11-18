@@ -7,7 +7,7 @@ apply plugin: 'org.checkerframework'
 
 checkerFramework {
     checkers = ['org.checkerframework.checker.nullness.NullnessChecker']
-    extraJavacArgs = ['-Astubs=/mnt/c/Users/julia/IdeaProjects/SpaceMazeCheck/stubs']
+    extraJavacArgs = ["-Astubs=${project.projectDir}/stubs"]
 
 }
 

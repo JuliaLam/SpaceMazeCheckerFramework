@@ -13,7 +13,7 @@ final public class MainPanel extends JPanel implements Runnable {
     public final int screenHeight = baseObjectSize * maxRows;
     int FPS = 60;
 
-    TileManager tileM = new TileManager(this);
+    TileManager tileM = new TileManager(this.baseObjectSize, this.maxColumns, this.maxRows);
     KeyHandler keyH = new KeyHandler();
     @MonotonicNonNull Thread gameThread = null;
     Player player = new Player(this, keyH);

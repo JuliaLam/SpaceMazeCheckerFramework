@@ -14,11 +14,10 @@ public class Entity {
     public int speed;
     public @MonotonicNonNull BufferedImage right;
     public @MonotonicNonNull BufferedImage left;
-    public @MonotonicNonNull Rectangle solidArea;
+    public Rectangle solidArea;
     public String direction = ""; //enum? how
     public boolean collisionOn = false;
 
-    @EnsuresNonNull("this.solidArea")
     Entity(int x, int y, int width, int height){
         this.solidArea = new Rectangle(x, y, width, height);
     }
