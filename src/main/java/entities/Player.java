@@ -17,13 +17,15 @@ import java.util.Objects;
 
 public class Player extends Entity{
 
-    MainPanel gp;
+    //MainPanel gp;
     KeyHandler keyH;
+    private final int baseObjectSize;
     @EnsuresNonNull("this.solidArea")
-    public Player(MainPanel gp, KeyHandler keyH){
+    public Player(MainPanel gp, KeyHandler keyH, final int baseObjectSize){
         super(6, 2, 30,30);
-        this.gp = gp;
+        //this.gp = gp;
         this.keyH = keyH;
+        this.baseObjectSize = baseObjectSize;
     }
 
     public void setDefaultValues(entities.Player this){
@@ -61,7 +63,7 @@ public class Player extends Entity{
             }
 
             collisionOn = false;
-            gp.cChecker.checkTile(this);
+            //gp.cChecker.checkTile(this);
             if (!collisionOn) {
                 switch (direction) {
                     case "up":
@@ -81,7 +83,7 @@ public class Player extends Entity{
             }
         }
     }
-    public void draw(Graphics2D g2){
+    public void draw(Player this, Graphics2D g2){
         BufferedImage image = null;
         switch(direction){
             case "up":
@@ -97,7 +99,7 @@ public class Player extends Entity{
                 image = right;
                 break;
         }
-        g2.drawImage(image,x,y,gp.baseObjectSize,gp.baseObjectSize, null);
+        g2.drawImage(image,x,y, baseObjectSize, baseObjectSize, null);
 
     }
 

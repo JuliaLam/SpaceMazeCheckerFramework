@@ -16,7 +16,7 @@ final public class MainPanel extends JPanel implements Runnable {
     TileManager tileM = new TileManager(this.baseObjectSize, this.maxColumns, this.maxRows);
     KeyHandler keyH = new KeyHandler();
     @MonotonicNonNull Thread gameThread = null;
-    Player player = new Player(this, keyH);
+    Player player = new Player(this, keyH, this.baseObjectSize);
     public CollisionChecker cChecker = new CollisionChecker(this);
 
 
